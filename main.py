@@ -8,8 +8,8 @@ from selenium.webdriver.remote.errorhandler import NoSuchElementException
 import json
 
 COUNTRY = "India"
-EMAIL = "maheswar2601@gmail.com"
-PASSWORD = "Maheswar@2634"
+EMAIL =  MAIL ID
+PASSWORD = PASSWORD
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
