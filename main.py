@@ -33,11 +33,8 @@ for i in range(1, 14):
             sub_cats.append(k.text)
         categories[cat.text] = sub_cats
 
-print(sub_categories)
 categories_values = [c for c in categories.keys()]
-print(categories_values)
 
-print(categories)
 
 # logging in LinkedIn
 
@@ -85,9 +82,8 @@ for i in categories["Information Technology / Software"]:
     except:
         continue
 
-print(pos_com_loc)
 jobs = [(c, p, l) for p, c, l in pos_com_loc]
-print(jobs)
+
 
 # scraping company_description, company_location and No.of Employees for the companies
 
@@ -135,12 +131,10 @@ for com in companies:
     except NoSuchElementException:
         continue
 
-print(des_loc_emp)
-print(com_des_state_subcategory)
 states = list(set([loc[1] for loc in des_loc_emp]))
-print(states)
 
-# putting all the information in csv files
+
+# putting all the information in json files
 
 # 1.Jobs
 
@@ -192,6 +186,9 @@ for d, l, e in des_loc_emp:
         d_l_e.seek(0)
         json.dump(f_d, d_l_e, indent=4)
 
+        
+# a company_details
+        
 with open("name_description_location_sub_categories.json", "w") as n_d_l_s:
     n_d_l_s.write('[]')
 
